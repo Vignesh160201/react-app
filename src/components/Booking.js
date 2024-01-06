@@ -28,7 +28,7 @@ function Booking() {
     const [appId, setAppId] = useState()
 
     useEffect(() => {
-        axios.get('http://mfpe.onrender.com/doctor/distinctspecialization')
+        axios.get('https://mfpe.onrender.com/doctor/distinctspecialization')
             .then(result => {
                 setDoctoDetails(result.data)
                 //console.log(result.data)
@@ -36,7 +36,7 @@ function Booking() {
     }, [])
 
     useEffect(()=>{
-        axios.get(`http://mfpe.onrender.com/doctor/getdoctorbyspecialist/${specialization}`)
+        axios.get(`https://mfpe.onrender.com/doctor/getdoctorbyspecialist/${specialization}`)
             .then(result => {
                 setSpec(result.data)
             })

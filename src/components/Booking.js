@@ -91,11 +91,13 @@ function Booking() {
         usenavigate('/viewappointment')
 
     }
+    let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
+    let webserviesmakeappointment='https://patient-8fp5.onrender.com/patient/makeappointment';
     const handleSubmit = (e) => {
         e.preventDefault();
         validate();
         if(!Object.keys(errors).length) {
-        axios.post('http://localhost:8081/patient/makeappointment', {
+        axios.post(webserviesmakeappointment, {
             patientName,
             doctorId,
             dateOfAppointment,

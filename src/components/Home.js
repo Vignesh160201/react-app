@@ -22,11 +22,11 @@ function Home() {
         return setIsShow(!isShow)
     }
 
-    let localhostgetallappointment=`http://localhost:8083/appointment/getallappointment/${doctorName}`;
-    let webservicesgetallappointment=`https://appointment-e696.onrender.com/appointment/getallappointment/${doctorName}`
     function getList() {
         var doctorName = localStorage.getItem('doctor-name')
-        axios.get(`http://localhost:8083/appointment/getallappointment/${doctorName}`)
+        var localhostgetallappointment=`http://localhost:8083/appointment/getallappointment/${doctorName}`;
+        var webservicesgetallappointment=`https://appointment-e696.onrender.com/appointment/getallappointment/${doctorName}`
+        axios.get(webservicesgetallappointment)
             .then(result => {
                 localStorage.setItem('appointmentlist-details', JSON.stringify(result.data))
                 setData(result.data)

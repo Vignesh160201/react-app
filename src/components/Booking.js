@@ -39,7 +39,7 @@ function Booking() {
     }, [])
 
     let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
-    let webservicespecialization=`https://mfpe.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
+    let webservicespecialization=`https://doctor-4uvc.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
     
     useEffect(()=>{
         axios.get(webservicespecialization)

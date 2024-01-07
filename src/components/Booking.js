@@ -6,7 +6,16 @@ import dateFormat from 'dateformat';
 import Footer from './Footer';
 import { Button, Modal } from 'react-bootstrap';
 
+ //path
+let localhostdistinctspecialization='http://localhost:8082/doctor/distinctspecialization';
+let webservicesdistinctspecialization='https://doctor-4uvc.onrender.com/doctor/distinctspecialization';
 
+let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
+let webservicespecialization=`https://doctor-4uvc.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
+    
+let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
+let webserviesmakeappointment='https://appointment-e696.onrender.com/appointment/makeappointment';
+    
 function Booking() {
     let usenavigate = useNavigate();
 
@@ -27,8 +36,6 @@ function Booking() {
     const [isShow, setIsShow] = useState(false)
     const [appId, setAppId] = useState()
 
-    let localhostdistinctspecialization='http://localhost:8082/doctor/distinctspecialization';
-    let webservicesdistinctspecialization='https://doctor-4uvc.onrender.com/doctor/distinctspecialization';
     
     useEffect(() => {
         axios.get(webservicesdistinctspecialization)
@@ -38,8 +45,6 @@ function Booking() {
             })
     }, [])
 
-    let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
-    let webservicespecialization=`https://doctor-4uvc.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
     
     useEffect(()=>{
         axios.get(webservicespecialization)
@@ -91,8 +96,6 @@ function Booking() {
         usenavigate('/viewappointment')
 
     }
-    let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
-    let webserviesmakeappointment='https://appointment-e696.onrender.com/appointment/makeappointment';
     const handleSubmit = (e) => {
         e.preventDefault();
         validate();

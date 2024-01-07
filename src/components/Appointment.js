@@ -4,24 +4,18 @@ import Header from "./Header";
 import Footer from './Footer';
 import axios from "axios";
 
-
-   const [appointmentId,setAppointmentId]=useState('')
-   const [data,setData]=useState([]);
-   const [show, setShow] = useState(false);
-
 function Appointment() {
 
   useEffect(()=>{
     localStorage.clear('appointment-details')
   })
-   
+    const [appointmentId,setAppointmentId]=useState('')
+    const [data,setData]=useState([]);
+    const [show, setShow] = useState(false);
 
     const handleSearch=(e)=>{
-   
-
-   let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
-   let webservicesviewappointment=`https://appointment-e696.onrender.com/appointment/viewappointment/${appointmentId}`;
-
+       let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
+      let webservicesviewappointment=`https://appointment-e696.onrender.com/appointment/viewappointment/${appointmentId}`;
         e.preventDefault();
         axios.get(webservicesviewappointment)
         .then(result=>{

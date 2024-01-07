@@ -15,7 +15,7 @@ function Doctor() {
     const [password, setPassword] = useState('');
     const [show, setShow] = useState(false);
     const [isShow, setIsShow] = useState(false);
-    let localhostauthenticate=''http://localhost:8400/auth/authenticate'';
+    let localhostauthenticate='http://localhost:8400/auth/authenticate';
     let webloadauthenticatepath='https://auth-nohs.onrender.com/auth/authenticate';
     
 

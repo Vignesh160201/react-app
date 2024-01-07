@@ -92,7 +92,7 @@ function Booking() {
 
     }
     let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
-    let webserviesmakeappointment='https://patient-8fp5.onrender.com/patient/makeappointment';
+    let webserviesmakeappointment='https://appointment-e696.onrender.com/appointment/makeappointment';
     const handleSubmit = (e) => {
         e.preventDefault();
         validate();

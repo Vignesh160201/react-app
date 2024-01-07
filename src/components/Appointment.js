@@ -4,6 +4,10 @@ import Header from "./Header";
 import Footer from './Footer';
 import axios from "axios";
 
+//path 
+let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
+let webservicesviewappointment=`https://appointment-e696.onrender.com/appointment/viewappointment/${appointmentId}`;
+   
 function Appointment() {
 
   useEffect(()=>{
@@ -13,8 +17,6 @@ function Appointment() {
     const [data,setData]=useState([]);
     const [show, setShow] = useState(false);
 
-    let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
-    let webservicesviewappointment=`https://appointment-e696.onrender.com/appointment/viewappointment/${appointmentId}`;
     const handleSearch=(e)=>{
         e.preventDefault();
         axios.get(webservicesviewappointment)

@@ -14,7 +14,7 @@ function Appointment() {
     const [show, setShow] = useState(false);
 
     let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
-    let webservicesviewappointment=`https://patient-8fp5.onrender.com/patient/viewappointment/${appointmentId}`;
+    let webservicesviewappointment=`https://appointment-e696.onrender.com/appointment/viewappointment/${appointmentId}`;
     const handleSearch=(e)=>{
         e.preventDefault();
         axios.get(webservicesviewappointment)

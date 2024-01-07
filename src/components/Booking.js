@@ -27,16 +27,22 @@ function Booking() {
     const [isShow, setIsShow] = useState(false)
     const [appId, setAppId] = useState()
 
+    let localhostdistinctspecialization='http://localhost:8082/doctor/distinctspecialization';
+    let webservicesdistinctspecialization='https://doctor-4uvc.onrender.com/doctor/distinctspecialization';
+    
     useEffect(() => {
-        axios.get('https://mfpe.onrender.com/doctor/distinctspecialization')
+        axios.get(webservicesdistinctspecialization)
             .then(result => {
                 setDoctoDetails(result.data)
                 //console.log(result.data)
             })
     }, [])
 
+    let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
+    let webservicespecialization=`https://mfpe.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
+    
     useEffect(()=>{
-        axios.get(`https://mfpe.onrender.com/doctor/getdoctorbyspecialist/${specialization}`)
+        axios.get(webservicespecialization)
             .then(result => {
                 setSpec(result.data)
             })

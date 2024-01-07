@@ -42,7 +42,7 @@ function Home() {
 
     }
     let localhostupdatestatus=`http://localhost:8082/doctor/updatestatus/${id}/${updatedStatus}/${remark}`;
-    let webserviceupdatestatus=`https://doctor-4uvc.onrender.com/doctor/updatestatus/${id}/${updatedStatus}/${remark}`;
+    let webserviceupdatestatus=`https://appointment-e696.onrender.com/appointment/updatestatus/${id}/${updatedStatus}/${remark}`;
     function updateStatus() {
         const token = JSON.parse(localStorage.getItem('doctor-token'))
         axios.put(webserviceupdatestatus,{},

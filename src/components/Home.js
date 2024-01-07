@@ -22,7 +22,8 @@ function Home() {
         return setIsShow(!isShow)
     }
 
-
+    let localhostgetallappointment=`http://localhost:8083/appointment/getallappointment/${doctorName}`;
+    let webservicesgetallappointment=`https://appointment-e696.onrender.com/appointment/getallappointment/${doctorName}`
     function getList() {
         var doctorName = localStorage.getItem('doctor-name')
         axios.get(`http://localhost:8083/appointment/getallappointment/${doctorName}`)
@@ -40,9 +41,11 @@ function Home() {
             setId(id);
 
     }
+    let localhostupdatestatus=`http://localhost:8082/doctor/updatestatus/${id}/${updatedStatus}/${remark}`;
+    let webserviceupdatestatus=`https://doctor-4uvc.onrender.com/doctor/updatestatus/${id}/${updatedStatus}/${remark}`;
     function updateStatus() {
         const token = JSON.parse(localStorage.getItem('doctor-token'))
-        axios.put(`http://localhost:8082/doctor/updatestatus/${id}/${updatedStatus}/${remark}`,{},
+        axios.put(webserviceupdatestatus,{},
         { headers: { Authorization: `Bearer ${token}` } })
             .then(result => {
                 localStorage.setItem('updated-details', JSON.stringify(result.data))

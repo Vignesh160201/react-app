@@ -6,18 +6,13 @@ import dateFormat from 'dateformat';
 import Footer from './Footer';
 import { Button, Modal } from 'react-bootstrap';
 
- //path
-let localhostdistinctspecialization='http://localhost:8082/doctor/distinctspecialization';
-let webservicesdistinctspecialization='https://doctor-4uvc.onrender.com/doctor/distinctspecialization';
-
-let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
-let webservicespecialization=`https://doctor-4uvc.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
-    
-let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
-let webserviesmakeappointment='https://appointment-e696.onrender.com/appointment/makeappointment';
+ 
     
 function Booking() {
     let usenavigate = useNavigate();
+
+
+
 
     const [patientName, setPatientName] = useState()
     const [doctorId, setDoctorId] = useState('docname')
@@ -35,6 +30,15 @@ function Booking() {
     const [dateMsg, setDateMsg] = useState('')
     const [isShow, setIsShow] = useState(false)
     const [appId, setAppId] = useState()
+   //path
+  let localhostdistinctspecialization='http://localhost:8082/doctor/distinctspecialization';
+  let webservicesdistinctspecialization='https://doctor-4uvc.onrender.com/doctor/distinctspecialization';
+
+ let localhostspecialization=`https://localhost:8082/doctor/getdoctorbyspecialist/${specialization}`;
+let webservicespecialization=`https://doctor-4uvc.onrender.com/doctor/getdoctorbyspecialist/${specialization}`;
+    
+let localhostmakeappointment='http://localhost:8081/patient/makeappointment';
+let webserviesmakeappointment='https://appointment-e696.onrender.com/appointment/makeappointment';
 
     
     useEffect(() => {

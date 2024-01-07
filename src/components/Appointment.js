@@ -13,9 +13,11 @@ function Appointment() {
     const [data,setData]=useState([]);
     const [show, setShow] = useState(false);
 
+    let localhostviewappointment=`http://localhost:8081/patient/viewappointment/${appointmentId}`;
+    let webservicesviewappointment=`https://patient-8fp5.onrender.com/patient/viewappointment/${appointmentId}`;
     const handleSearch=(e)=>{
         e.preventDefault();
-        axios.get(`http://localhost:8081/patient/viewappointment/${appointmentId}`)
+        axios.get(webservicesviewappointment)
         .then(result=>{
             localStorage.setItem('appointment-details',JSON.stringify(result.data))
           //console.log(result.data)
